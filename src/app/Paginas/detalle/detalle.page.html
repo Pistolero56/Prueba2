@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="Atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-button color="dark" size="small" slot="end" [routerLink]="['/carrito']" >
+      {{ cartItemCount | async }}
+      <ion-icon name="cart" slot="end"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{api.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> {{api.description}} </p>
+      <p> {{api.price}} </p>
+      <p> {{api.discountPercentage}} </p>
+      <p> {{api.rating}} </p>
+      <p> {{api.stock}} </p>
+      <p> {{api.brand}} </p>
+      <p> {{api.category}} </p>
+      <p> {{api.thumbnail}} </p>
+    </ion-card-content>
+    <ion-button [routerLink]="['/actualizar',api.id]"   color="warning"  > <ion-icon name="create"></ion-icon> </ion-button>
+    <ion-button [routerLink]="['/eliminar', api.id]" color="danger" > <ion-icon name="trash"></ion-icon> </ion-button>
+    <ion-button color="dark" size="small" (click)="addToCart(api)">
+      Agregar al carrito<ion-icon name="cart" slot="end"></ion-icon></ion-button>
+
+
+  </ion-card>
+
+
+
+</ion-content>

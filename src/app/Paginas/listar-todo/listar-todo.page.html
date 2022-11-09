@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-button (click)="doRefresh()" slot="start" fill="clear">
+      <ion-icon name="reload-outline" style="color: white;"></ion-icon>
+    </ion-button>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/agregar']" >Agregar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title style="text-align: center;">Listar</ion-title>
+    <ion-card *ngFor="let g of listar" [routerLink]="['/detalle',g.id]"  >
+      <ion-card-header>
+        <ion-card-title>{{g.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{g.description}}</p>
+        <p>{{g.price}}</p>
+        <p>{{g.discountPercentage}}</p>
+        <p>{{g.rating}}</p>
+        <p>{{g.stock}}</p>
+        <p>{{g.category}}</p>
+        <p>{{g.thumbnail}}</p>
+      </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

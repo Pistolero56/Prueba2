@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="Atrás"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <form>
+
+    <ion-item lines="full">
+      <ion-label position="floating">title</ion-label>
+      <ion-input type="text" name="txtitle" [(ngModel)]="newdato.title" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">description</ion-label>
+      <ion-input type="text" name="txdescription" [(ngModel)]="newdato.description" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="text" name="txPrice" [(ngModel)]="newdato.price" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">discountPercentage</ion-label>
+      <ion-input type="text" name="txdiscountPercentage" [(ngModel)]="newdato.discountPercentage" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">rating</ion-label>
+      <ion-input type="text" name="txrating" [(ngModel)]="newdato.rating" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">stock</ion-label>
+      <ion-input type="text" name="txstock" [(ngModel)]="newdato.stock" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">brand</ion-label>
+      <ion-input type="text" name="txbrand" [(ngModel)]="newdato.brand" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">category</ion-label>
+      <ion-input type="text" name="txcategory" [(ngModel)]="newdato.category" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">thumbnail</ion-label>
+      <ion-input type="text" name="txthumbnail" [(ngModel)]="newdato.thumbnail" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="crearDatos()" expand="block" color="success">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+  </form>
+
+</ion-content>
